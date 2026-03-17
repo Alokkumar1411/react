@@ -35,7 +35,7 @@ const App = () => {
       }} placeholder='Enter Details' />
 
 
-      <button className='bg-white rounded w-full text-black px-5 py-2 ' >Add Notes</button>
+      <button className='bg-white rounded w-full active:scale-95 text-black px-5 py-2 ' >Add Notes</button>
     
     </form>
 
@@ -43,9 +43,11 @@ const App = () => {
     <h1 className='text-4xl font-bold'>YOUR NOTES</h1>
     <div className='flex flex-wrap mt-10 gap-5 h-full overflow-auto'>
         {Task.map(function(elem,idx){
-          return <div key={idx} className="h-53 w-40 rounded-2xl text-black bg-cover p-4 bg-[url('https://imgs.search.brave.com/sKuBL99HeDVjryf0DzbovRwbTVg3ULh0RRvnyHwZmrA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzcv/MTUyLzY4NC9zbWFs/bC9zdGlja3ktbm90/ZS1wYXBlci1iYWNr/Z3JvdW5kLWZyZWUt/cG5nLnBuZw')]">
-            <h3 className='leading-tight font-bold text-xl'>{elem.first}</h3>
-            <p className='mt-4 leading-tight font-medium text-gray-600'>{elem.detail}</p>
+          return <div key={idx} className="h-53 flex flex-col justify-between relative w-40 rounded-2xl text-black bg-cover p-4 bg-[url('https://imgs.search.brave.com/sKuBL99HeDVjryf0DzbovRwbTVg3ULh0RRvnyHwZmrA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzcv/MTUyLzY4NC9zbWFs/bC9zdGlja3ktbm90/ZS1wYXBlci1iYWNr/Z3JvdW5kLWZyZWUt/cG5nLnBuZw')]">
+            <div className="overflow-hidden flex-1 break-words overflow-y-auto max-h-40 no-scrollbar"><h3 className='leading-tight  font-bold text-xl'>{elem.first}</h3>
+            <p className='mt-4 leading-tight  break-words  max-h-40 font-medium  text-gray-600'>{elem.detail}</p>
+            </div>
+            <button> Delete Note</button>
           </div>
 
         })}
